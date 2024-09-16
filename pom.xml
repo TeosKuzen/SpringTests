@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>pro.chef</groupId>
+    <artifactId>ChefPro</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <java.version>17</java.version>
+
+        <rest-assured.version>5.1.1</rest-assured.version>
+        <json-schema-validator.version>5.1.1</json-schema-validator.version>
+        <allure-selenide.version>2.18.1</allure-selenide.version>
+        <allure-rest-assured.version>2.18.1</allure-rest-assured.version>
+        <allure-junit5.version>2.18.1</allure-junit5.version>
+        <owner.version>1.0.12</owner.version>
+        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <junit-jupiter-api.version>2.2.9</junit-jupiter-api.version>
+        <!--    <pdf-test.version>1.8.1</pdf-test.version>-->
+        <jackson-databind.version>2.13.3</jackson-databind.version>
+        <jackson-dataformat-xml.version>2.13.3</jackson-dataformat-xml.version>
+        <lombok.version>1.18.30</lombok.version>
+        <!--    <spring-data-jpa.version>3.3.0</spring-data-jpa.version>-->
+        <!--    <mssql-jdbc.version>12.6.1.jre11</mssql-jdbc.version>-->
+        <assertj-core.version>3.24.2</assertj-core.version>
+        <podam.version>7.2.5.RELEASE</podam.version>
+        <javafaker.version>1.0.2</javafaker.version>
+        <commons-codec.version>1.15</commons-codec.version>
+        <commons-validator.version>1.6</commons-validator.version>
+        <spring-boot-starter-aop.version>3.1.2</spring-boot-starter-aop.version>
+        <spring-boot-starter-validation.version>3.1.3</spring-boot-starter-validation.version>
+        <spring-boot-starter-actuator.version>3.1.3</spring-boot-starter-actuator.version>
+        <spring-boot-starter-test.version>3.1.3</spring-boot-starter-test.version>
+        <spring-boot-starter-data-jpa.version>3.1.3</spring-boot-starter-data-jpa.version>
+
+        <junit-jupiter-api.version>5.9.3</junit-jupiter-api.version>
+        <junit-jupiter-engine.version>5.9.3</junit-jupiter-engine.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <profile/>
+    </properties>
+
+    <dependencies>
+        <!--    Валидация данных в приложении Spring Boot.-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>${spring-boot-starter-validation.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--    Мониторинг и управление приложением Spring Boot (метрики, информация о состоянии и т.д.).-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring-boot-starter-actuator.version}</version>
+        </dependency>
+        <!--    Набор инструментов для тестирования Spring Boot приложений.-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot-starter-test.version}</version>
+        </dependency>
+
+        <!--    <dependency>-->
+        <!--      <groupId>org.springframework.boot</groupId>-->
+        <!--      <artifactId>spring-boot-starter-data-jpa</artifactId>-->
+        <!--      <version>${spring-boot-starter-data-jpa.version}</version>-->
+        <!--    </dependency>-->
+
+        <!--    <dependency>-->
+        <!--      <groupId>org.testcontainers</groupId>-->
+        <!--      <artifactId>mssqlserver</artifactId>-->
+        <!--      <version>1.19.8</version>-->
+        <!--      <scope>runtime</scope>-->
+        <!--    </dependency>-->
+        <!--    Для тестирования REST API.-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
+        </dependency>
+        <!--    Валидация JSON-схем для REST API.-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${json-schema-validator.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--    API для создания тестов с использованием JUnit 5.-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter-api.version}</version>
+        </dependency>
+        <!--    Исполнитель тестов для JUnit 5.-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter-engine.version}</version>
+        </dependency>
+        <!--    Интеграция Rest Assured с Allure для генерации отчетов.-->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-rest-assured</artifactId>
+            <version>${allure-rest-assured.version}</version>
+        </dependency>
+        <!--    Интеграция JUnit 5 с Allure для генерации отчетов.-->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>${allure-junit5.version}</version>
+        </dependency>
+        <!--    Интеграция Selenide с Allure для генерации отчетов.-->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-selenide</artifactId>
+            <version>${allure-selenide.version}</version>
+        </dependency>
+        <!--    Преобразование между JSON и Java объектами.-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
+        </dependency>
+        <!--    Поддержка формата XML для Jackson.-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson-dataformat-xml.version}</version>
+        </dependency>
+        <!--    Библиотека для создания более читаемых ассертов в тестах.-->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
+        </dependency>
+        <!--    Автоматическое генерирование кода (геттеры, сеттеры, конструкторы и т.д.).-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <!--    Управление конфигурационными параметрами.-->
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>${owner.version}</version>
+        </dependency>
+        <!--    Утилиты для валидации данных (например, email, URL).-->
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>${commons-validator.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--    Алгоритмы кодирования и декодирования (например, Base64).-->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons-codec.version}</version>
+        </dependency>
+        <!--    Генерация данных для тестирования POJO объектов.-->
+        <dependency>
+            <groupId>uk.co.jemos.podam</groupId>
+            <artifactId>podam</artifactId>
+            <version>${podam.version}</version>
+        </dependency>
+        <!--    Генерация тестовых данных.-->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
+        </dependency>
+        <!-- Для подключения к k8s -->
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>kubernetes-client</artifactId>
+            <version>6.13.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.55</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.16</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.16</version>
+        </dependency>
+    </dependencies>
+    <!--  Запуск тестов в Maven.-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <parallel>classes</parallel>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    <properties>
+                        <includeTags>smoke, regression, negative, positive, prod, test, test-qa</includeTags>
+                        <configurationParameters>
+                            junit.jupiter.execution.parallel.enabled=true
+                            junit.jupiter.execution.parallel.mode.default=CONCURRENT
+                            junit.jupiter.execution.parallel.config.dynamic.factor=10
+                        </configurationParameters>
+                    </properties>
+                    <testFailureIgnore>false</testFailureIgnore>
+                    <systemPropertyVariables>
+                        <allure.results.directory>target/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+            <!--      Интеграция Allure отчетов с Maven.-->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                <configuration>
+                    <allureDownloadUrl>
+                        https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/%s/allure-commandline-%s.zip
+                    </allureDownloadUrl>
+                    <reportVersion>2.18.0</reportVersion>
+                </configuration>
+            </plugin>
+            <!--      Компиляция Java кода.-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
