@@ -27,7 +27,7 @@
 <img width="10%" title="RestAssured" src="images/logo/RestAssured.svg">
 <img width="10%" title="Lombok" src="images/logo/lombok.svg">
 <img width="10%" title="Kubernetes" src="images/logo/cib-kubernetes-blue.svg">
-<img width="10%" title="Kubernetes" src="images/logo/ssh-svgrepo-com.svg">
+<img width="10%" title="SSH" src="images/logo/ssh-svgrepo-com.svg">
 
 </p>
 
