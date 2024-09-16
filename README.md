@@ -100,7 +100,7 @@ privateKey: /путь к ssh-ключу
 passphrase: ваш пароль
 ```
 
-## Класс [PinCodePositiveTest](src/test/java/pro/chef/pincode/PinCodePositiveTest.java)
+## 🚀 Класс [PinCodePositiveTest](src/test/java/pro/chef/pincode/PinCodePositiveTest.java)
 
 **В данном классе мы можем запустить свои первые автотесты**
 
