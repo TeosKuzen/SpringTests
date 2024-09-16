@@ -1,0 +1,32 @@
+logging:
+  level:
+    ROOT: INFO
+config:
+  logging: true
+  baseUrl: https://testing-be.cheft.pro
+  token: 03AFcWeA7K08eH2-aAKLnRoWGoojTqAvQdS0lIruz-4m3wTYHSpmRhJObTI5OQd3Y1xPCarStLgnTpk_2Oo9BOQ_o0_Ese8Zdw3Ncbf4-8-BAuMtoaZ2MOvYAD1dehZJkLNifm3fN6aQkgiiOQIgk-_YDGHkSqY_WK9kqAJOf6vD0hUqQA9ixpCfQLEU8W_rDwWRcRrin7-3pv35RRmdo2040Xc98I1ypvaSrbmKOfgaP3RvXdUcmloHGYWu_2XIPfGFz_Rxxmc0-jAxvy0SiZs_nFaVSF1SFocslSyXM07QtfknbKLZt0M9WQ3i77K4C_wfFy_VjLk20oe4ltyd4-zR7eNHYp5IDpdHDBzbT8jan8NdjNWR9PGmfedw9Iz0AX8N-dpxBjhOVoLTdyN9BYHDSvg0XapaUWeG0ULQ-0dS6-UUTDKyk6mUDns9FtB2CmhDk9Gu8mT-GR3LIl356BE1Jas4bQ3lO5Lls_aUQLlHuGJIsMuN-tyNAfLm8mJKM3ALgRJDp3hrU1WOCRtJ69RgSv8-keYkFMKZR5VZCN1VgoAWtk7T01H0009WGdznG3AqGlaDBYIJSy-jzof7MNgEiGlDYksy3g9sa45zWgKminB3mjT1TDax-gDpFbMJNrgFcRFZlqJB22uvsvRoIrI-rqHlXXdSKGukCTRFUqZRlrxLhcnRB-g6jBuIqxiMTGlG12eqoh5sz7Rdh-HLuxHe8QjEKnEsHH6n8zvHnfs0aUtlCFymx8KTcz95BirT1Gb8Eg-VgugOvvGqz5HMq7U33HJmoKZ3-gtK9qoVRtGtW8EGWayq0z2ym8TQF8KkgZGjYsWDEw19mpj2yLg9OJvAMtSq9Kg0zkGQ
+  phone: 79824502872
+  bearer-token: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbGllbnRfaWQiOiI5NjQzZGQ3ZC00MDJlLTQyNGUtYTgyNy0xNGM5YzJiYjZjM2UifQ.fw6QgtVUy55gqwrWgsQe9_WrZ7Pi-TWhCWojbQvRq3Q
+  platform_id: WebDesktop
+  platform_version: 4.4.0
+
+ssh:
+  host: bastion.review.chefmarket.ru
+  port: 22322
+  user: root
+  privateKey:
+  passphrase:
+  dbHost: c-c9qi12clfpv7sqt30ivu.rw.mdb.yandexcloud.net
+  dbPort: 6432
+  localPort: 5433
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:${ssh.localPort}/${spring.datasource.username}
+    username: be
+    password: Dq1jhEj6QoEPs9CE
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect

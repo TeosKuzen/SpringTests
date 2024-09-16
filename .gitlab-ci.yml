@@ -1,0 +1,10 @@
+image:
+
+test:
+  stage:
+  variables:
+    SECURE_FILES_DOWNLOAD_PATH: './src/main/resources/'
+    RESULTS:
+  script:
+  allow_failure: true
+  tags:
