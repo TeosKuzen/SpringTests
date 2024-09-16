@@ -47,6 +47,8 @@
 
 ## Подготовка проекта
 
+В классе [DataSourceConfig](src/main/java/pro/chef/dao/configurators/DataSourceConfig.java) библиотека JSch конфигурирует подключение к серверу по SSH. Для того, чтобы подключение произошло без проблем необходимо следовать нижеуказанным шагам. Без 
+
 1. Проверить свой ssh-клиент, нужно выполнить bash-скрипт
 
 ```bash
@@ -55,9 +57,12 @@ ssh -V
 **При возникновении ошибки нужно установить ssh-клиент(либо включить его)**
 
 **Выполните одну из следующих команд в PowerShell с правами администратора для установки/запуска ssh-клиента**
+
+Установка
 ```
 Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 ```
+Включение(при отключении)
 ```
 Set-Service -Name ssh-agent -StartupType Automatic
 Start-Service ssh-agent
@@ -67,6 +72,8 @@ Start-Service ssh-agent
 ssh-add -l
 ```
 **Проверить состояние вашего приватного SSH-ключа. Если его нет, то необходимо создать его с защитой паролем**
+
+**Если ключ уже имеется, но он без пароля, то в классе [DataSourceConfig](src/main/java/pro/chef/dao/configurators/DataSourceConfig.java) в методе `jsch.addIdentity` нужно убрать аргумент `sshPassphrase`**
 
 **Затем можно с помощью ниже указанной команды проверить состояние подключения к серверу, подставив значения из конфигурации**
 ```bash
