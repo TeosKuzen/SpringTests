@@ -75,20 +75,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${spring-boot-starter-test.version}</version>
         </dependency>
-
-        <!--    <dependency>-->
-        <!--      <groupId>org.springframework.boot</groupId>-->
-        <!--      <artifactId>spring-boot-starter-data-jpa</artifactId>-->
-        <!--      <version>${spring-boot-starter-data-jpa.version}</version>-->
-        <!--    </dependency>-->
-
-        <!--    <dependency>-->
-        <!--      <groupId>org.testcontainers</groupId>-->
-        <!--      <artifactId>mssqlserver</artifactId>-->
-        <!--      <version>1.19.8</version>-->
-        <!--      <scope>runtime</scope>-->
-        <!--    </dependency>-->
-        <!--    Для тестирования REST API.-->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -202,15 +188,18 @@
             <artifactId>kubernetes-client</artifactId>
             <version>6.13.3</version>
         </dependency>
+        <!-- базовый фреймворк Spring -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <!-- Библиотека для взаимодействия с БД PGSQL -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.3.3</version>
         </dependency>
+        <!-- Библиотека для взаимодействия с SSH-клиентом -->
         <dependency>
             <groupId>com.jcraft</groupId>
             <artifactId>jsch</artifactId>
