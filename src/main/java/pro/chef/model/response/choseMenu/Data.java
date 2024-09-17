@@ -1,11 +1,12 @@
 package pro.chef.model.response.choseMenu;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,60 +16,60 @@ import lombok.experimental.Accessors;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @EqualsAndHashCode
 @ToString
-public class Data {
+public class Data implements Serializable {
 
-	@JsonProperty
-	private Image image;
+    @JsonProperty
+    private Image image;
 
-	@JsonProperty
-	private boolean selfmake;
+    @JsonProperty
+    private boolean selfmake;
 
-	@JsonProperty
-	private int week;
+    @JsonProperty
+    private int week;
 
-	@JsonProperty
-	private int year;
+    @JsonProperty
+    private int year;
 
-	@JsonProperty
-	private String weekId;
+    @JsonProperty
+    private String weekId;
 
-	@JsonProperty
-	private String menuTypeId;
+    @JsonProperty
+    private String menuTypeId;
 
-	@JsonProperty
-	private Object replacementForTypeId;
+    @JsonProperty
+    private Object replacementForTypeId;
 
-	@JsonProperty
-	private List<Object> dishes;
+    @JsonProperty
+    private List<Object> dishes;
 
-	@JsonProperty
-	private Serving serving;
+    @JsonProperty
+    private Serving serving;
 
-	@JsonProperty
-	private boolean isConstructed;
+    @JsonProperty
+    private boolean isConstructed;
 
-	@JsonProperty
-	private int price;
+    @JsonProperty
+    private int price;
 
-	@JsonProperty
-	private String deliveryFrom;
+    @JsonProperty
+    private String deliveryFrom;
 
-	@JsonProperty
-	private int days;
+    @JsonProperty
+    private int days;
 
-	@JsonProperty
-	private String id;
+    @JsonProperty
+    private String id;
 
-	@JsonProperty
-	private String menuTypeName;
+    @JsonProperty
+    private String menuTypeName;
 
-	@JsonProperty
-	private boolean isGift;
+    @JsonProperty
+    private boolean isGift;
 
-	@JsonProperty
-	private Object rate;
+    @JsonProperty
+    private Object rate;
 
-	@JsonProperty
-	private String name;
+    @JsonProperty
+    private String name;
 
 }

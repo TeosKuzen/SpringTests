@@ -5,11 +5,8 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pro.chef.dao.entity.AddressesEntity;
 import pro.chef.dao.entity.BasketsEntity;
-import pro.chef.dao.repository.AddressesRepository;
 import pro.chef.dao.repository.BasketsRepository;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

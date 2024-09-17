@@ -1,5 +1,8 @@
 package pro.chef.dao.configurators;
 
+import lombok.Getter;
+
+@Getter
 public enum SqlQueries {
 
     SELECT_ORDER_BY_NUMBER("SELECT * FROM public.orders where orders.chef_id = '2661668';");
@@ -8,10 +11,6 @@ public enum SqlQueries {
 
     SqlQueries(String query) {
         this.query = query;
-    }
-
-    public String getQuery() {
-        return query;
     }
 
 }

@@ -40,19 +40,23 @@ public class PinCodePositiveTest extends BaseApiTest {
     @Test //простейший тест для проверки
     void checkRequestPinCodeTest() {
         PinCodeRequest requestData =
-                step("Сгенерировать тестовые данные, для обновление кэша", () ->
+                step("Запрос pin code", () ->
                         new PinCodeRequest(config.getToken(), config.getPhone()));
 
         PinCodeResponse response = pinCodeSteps.basePinCodeRequest(pinCodeApiService, requestData);
         pinCodeSteps.checkNewPinCodeResponse(response);
     }
 
+    @DisplayName("Проверка БД через Repository")
+    @Description("Первый запрос к Entity-Orders")
     @Test
     public void testTableExists() {
         ordersService.findAllById(UUID.fromString("c46c444f-b9a8-4e97-80eb-c95578d38b5b"));
         System.out.println(ordersService.findAllById(UUID.fromString("c46c444f-b9a8-4e97-80eb-c95578d38b5b")));
     }
 
+    @DisplayName("Проверка отправки прямого SQL-запроса в БД")
+    @Description("Отправляем SQL-запрос, прописанный в SqlQueries")
     @Test
     public void testSQLQuery() {
         dataSourceConfig.executeQuery(SqlQueries.SELECT_ORDER_BY_NUMBER.getQuery());

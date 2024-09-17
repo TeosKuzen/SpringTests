@@ -2,7 +2,6 @@ package pro.chef.dao.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.time.ZonedDateTime;
 import java.util.UUID;
 

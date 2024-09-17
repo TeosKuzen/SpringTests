@@ -1,11 +1,12 @@
 package pro.chef.model.response.getMe;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,7 +16,7 @@ import lombok.experimental.Accessors;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @EqualsAndHashCode
 @ToString
-public class Response {
+public class Response implements Serializable {
 
     @JsonProperty
     private Object firstOrderAt;

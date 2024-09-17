@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @Accessors(fluent = true)
@@ -13,12 +15,12 @@ import lombok.experimental.Accessors;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @EqualsAndHashCode
 @ToString
-public class Bonus {
+public class Bonus implements Serializable {
 
-	@JsonProperty
-	private int current;
+    @JsonProperty
+    private int current;
 
-	@JsonProperty
-	private int total;
+    @JsonProperty
+    private int total;
 
 }

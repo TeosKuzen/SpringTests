@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @Accessors(fluent = true)
@@ -13,33 +15,33 @@ import lombok.experimental.Accessors;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @EqualsAndHashCode
 @ToString
-public class Image {
+public class Image implements Serializable {
 
-	@JsonProperty
-	private Object chefId;
+    @JsonProperty
+    private Object chefId;
 
-	@JsonProperty
-	private Object fileName;
+    @JsonProperty
+    private Object fileName;
 
-	@JsonProperty
-	private String name;
+    @JsonProperty
+    private String name;
 
-	@JsonProperty
-	private String link;
+    @JsonProperty
+    private String link;
 
-	@JsonProperty
-	private Object width;
+    @JsonProperty
+    private Object width;
 
-	@JsonProperty
-	private String id;
+    @JsonProperty
+    private String id;
 
-	@JsonProperty
-	private String type;
+    @JsonProperty
+    private String type;
 
-	@JsonProperty
-	private Object parentImageId;
+    @JsonProperty
+    private Object parentImageId;
 
-	@JsonProperty
-	private Object height;
+    @JsonProperty
+    private Object height;
 
 }

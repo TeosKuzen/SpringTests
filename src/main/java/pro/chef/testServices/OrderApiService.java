@@ -30,7 +30,7 @@ public class OrderApiService extends BaseApiService {
                 .header(PLATFORM_ID, config.getPlatformId())
                 .body(orderData)
                 .when()
-                .post(config.getBaseUrl() + "/api/v1/clients/request-pin")
+                .post(config.getBaseUrl() + "/api/v1/orders")
         );
     }
 

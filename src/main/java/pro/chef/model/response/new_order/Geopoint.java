@@ -1,11 +1,20 @@
 package pro.chef.model.response.new_order;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
-@Data
+@Getter
+@Setter
+@Accessors(fluent = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+@EqualsAndHashCode
+@ToString
 public class Geopoint implements Serializable {
 
     @JsonProperty

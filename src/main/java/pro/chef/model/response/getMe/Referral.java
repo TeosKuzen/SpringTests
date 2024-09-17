@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @Accessors(fluent = true)
@@ -13,15 +15,15 @@ import lombok.experimental.Accessors;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @EqualsAndHashCode
 @ToString
-public class Referral {
+public class Referral implements Serializable {
 
-	@JsonProperty
-	private int referralCodeAmount;
+    @JsonProperty
+    private int referralCodeAmount;
 
-	@JsonProperty
-	private boolean canUseReferral;
+    @JsonProperty
+    private boolean canUseReferral;
 
-	@JsonProperty
-	private String referralCode;
+    @JsonProperty
+    private String referralCode;
 
 }
